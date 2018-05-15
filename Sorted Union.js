@@ -1,25 +1,22 @@
 function uniteUnique(arr) {
     var arrToArray = Array.from(arguments);
     finalArr = arrToArray[0];
+    console.log("first final arr", finalArr);
     var i;
     var ii;
-    var iii;
     
     for (i = 1; i < arrToArray.length; i++) {
         for (ii = 0; ii < arrToArray[i].length; ii++) {
-            for (iii = 0; iii < finalArr.length; iii++) {
-                if (arrToArray[i][ii] === finalArr[iii]) {
-                    console.log("deepfor1:", arrToArray, "///", arrToArray[i][ii], "///", finalArr[iii]);
-                    arrToArray[i] = arrToArray[i].splice([ii, 1]);
-                    console.log("deepfor2:", arrToArray);
-                }
+            if (finalArr.indexOf(arrToArray[i][ii]) != -1) {
+                console.log("failed number", arrToArray[i][ii]);
+            }
+            else {
+                console.log("passing number", arrToArray[i][ii]);
+                finalArr.push(arrToArray[i][ii]);
             }
         }
-        var finalArr = finalArr.concat(arrToArray[i]);
     }
   
-
-
     console.log("answer:", finalArr);
     return finalArr;
   }
