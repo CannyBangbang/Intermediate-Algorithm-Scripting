@@ -1,41 +1,40 @@
 function convertHTML(str) {
-    // &colon;&rpar;
-    //var regHTML = new RegExp(/\W/);
+  // &colon;&rpar;
+  //var regHTML = new RegExp(/\W/);
 
-    function newHTMLStr(match) {
-        console.log("match:", match);
-        switch (match) {
-            case "&":
-            match = "&​amp;";
-            break;
+  function newHTMLStr(match) {
+    console.log("match:", match);
+    switch (match) {
+      case "&":
+        match = "&​amp;";
+        break;
 
-            case "<":
-            match = "&​lt;";
-            break;
+      case "<":
+        match = "&​lt;";
+        break;
 
-            case ">":
-            match = "&​gt;";
-            break;
+      case ">":
+        match = "&​gt;";
+        break;
 
-            case "\"":
-            match = "&​quot;";
-            break;
+      case '"':
+        match = "&​quot;";
+        break;
 
-            case "'":
-            match = "&​apos;";
-            break;
+      case "'":
+        match = "&​apos;";
+        break;
 
-            default:
-            console.log("Something is wrong!!!");
-        }
-        return match;
+      default:
+        console.log("Something is wrong!!!");
     }
-
-    str = str.replace(/[^\w\s]/g, newHTMLStr);
-
-    console.log("answer str:", str);
-    return str;
+    return match;
   }
-  
-  convertHTML("Hamburgers < Pizza < Tacos");
-  
+
+  str = str.replace(/[^\w\s]/g, newHTMLStr);
+
+  console.log("answer str:", str);
+  return str;
+}
+
+convertHTML("Hamburgers < Pizza < Tacos");

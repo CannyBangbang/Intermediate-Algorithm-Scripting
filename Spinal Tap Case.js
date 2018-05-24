@@ -6,6 +6,5 @@ function spinalCase(str) {
   console.log(str);
   return str;
 }
-  
-  spinalCase("The_Andy_Griffith_Show");
-  
+
+spinalCase("The_Andy_Griffith_Show");
